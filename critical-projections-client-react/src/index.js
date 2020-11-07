@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import IMDBSearchListComponent from "./components/IMDBSearchListComponent";
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/font-awesome/css/font-awesome.css'
+import {BrowserRouter, Route, Link} from "react-router-dom";
+import IMDBSearchItemComponent from "./components/IMDBSearchItemComponent";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+        <div>
+            <Link to={"/search/movies"}>Search Movies</Link>
+            <Route path={'/search/movies'} exact component={IMDBSearchListComponent}/>
+            <Route path={'/search/movies/:movieId'} exact component={IMDBSearchItemComponent}/>
+        </div>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
