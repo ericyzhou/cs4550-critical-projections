@@ -1,5 +1,5 @@
-const urlTitle = "http://www.omdbapi.com/?apikey=b41175d7&s="
-const urlID = "http://www.omdbapi.com/?apikey=b41175d7&i="
+const urlTitle = "http://www.omdbapi.com/?apikey=b41175d7&type=movie&s="
+const urlID = "http://www.omdbapi.com/?apikey=b41175d7&plot=full&i="
 
 const findMovieByTitle = (movieTitle) =>
     fetch(`${urlTitle}${movieTitle}`)
