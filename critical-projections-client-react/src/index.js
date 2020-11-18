@@ -8,11 +8,15 @@ import '../node_modules/font-awesome/css/font-awesome.css'
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import MovieComponent from "./components/MovieComponent";
 import ReviewsComponent from './components/ReviewsComponent'
+import HomePageContainer from "./containers/HomePageContainer";
 
 ReactDOM.render(
     <BrowserRouter>
         <div>
-            <Link to={"/search/movies"}>Search Movies</Link>
+            <Link to={'/search/movies'}>Search Movies</Link>
+            <br/>
+            <Link to={'/home'}>Home</Link>
+            <Route path={'/home'} exact component={HomePageContainer}/>
             <Route path={'/search/movies'} exact component={IMDBSearchListComponent}/>
             <Route path={'/search/movies/:movieId'} exact component={MovieComponent}/>
             <Route path={'/search/movies/:movieId/reviews'} exact component={ReviewsComponent}/>

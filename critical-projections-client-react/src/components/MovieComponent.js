@@ -22,9 +22,9 @@ class MovieComponent extends React.Component {
     render() {
         return(
             <div className={"container"}>
-                <div className="jumbotron bg-dark text-white">
-                    <div className="container">
-                        <h1 className="display-4">{`${this.state.movie.Title} (${this.state.movie.Year})`}</h1>
+                <div className={"jumbotron bg-dark text-white"}>
+                    <div className={"container"}>
+                        <h1 className={"display-4"}>{`${this.state.movie.Title} (${this.state.movie.Year})`}</h1>
                         <hr className="my-4 bg-white"/>
                         <p className="lead">{this.state.movie.Rated}  |  {this.state.movie.Runtime}  |  {this.state.movie.Genre}  |  {this.state.movie.Released}</p>
                     </div>

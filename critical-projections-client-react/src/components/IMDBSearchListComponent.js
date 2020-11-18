@@ -1,6 +1,7 @@
 import React from 'react'
 import imdbSearchService from '../services/IMDBSearchService'
 import {Link} from "react-router-dom";
+import '../styles/IMDBSearchListStyle.css'
 
 class IMDBSearchListComponent extends React.Component {
 
@@ -27,7 +28,7 @@ class IMDBSearchListComponent extends React.Component {
     }
 
     handleKeyPress = (target) => {
-        if(target.charCode==13) {
+        if(target.charCode===13) {
             this.searchMovie(this.state.searchTerm)
         }
     }
@@ -37,7 +38,10 @@ class IMDBSearchListComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.state.searched = false
+        this.setState(prevState => ({
+            ...this.state,
+            searched: false
+        }))
     }
 
     render() {
@@ -69,6 +73,7 @@ class IMDBSearchListComponent extends React.Component {
                                     <table className={"table"}>
                                         <thead>
                                         <tr>
+                                            <th scope={"col"}></th>
                                             <th scope={"col"}>Title</th>
                                             <th scope={"col"}>Year Released</th>
                                         </tr>
@@ -77,8 +82,13 @@ class IMDBSearchListComponent extends React.Component {
                                         {
                                             this.state.results.Search.map(result =>
                                                 <tr>
-                                                    <td><Link
-                                                        to={`/search/movies/${result.imdbID}`}>{result.Title}</Link>
+                                                    <td>
+                                                        <img className={"result-image"} src={`${result.Poster}`}/>
+                                                    </td>
+                                                    <td>
+                                                        <Link to={`/search/movies/${result.imdbID}`}>
+                                                            {result.Title}
+                                                        </Link>
                                                     </td>
                                                     <td>{result.Year}</td>
                                                 </tr>
