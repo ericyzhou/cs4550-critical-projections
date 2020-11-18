@@ -2,7 +2,7 @@ import React from 'react';
 import imdbSearchService from "../services/IMDBSearchService";
 import {Link} from "react-router-dom";
 
-class IMDBSearchItemComponent extends React.Component {
+class MovieComponent extends React.Component {
 
     state = {
         movie: {},
@@ -108,4 +108,4 @@ class IMDBSearchItemComponent extends React.Component {
 }
 
 
-export default IMDBSearchItemComponent
+export default MovieComponent

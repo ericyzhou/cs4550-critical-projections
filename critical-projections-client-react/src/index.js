@@ -6,7 +6,7 @@ import IMDBSearchListComponent from "./components/IMDBSearchListComponent";
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/font-awesome/css/font-awesome.css'
 import {BrowserRouter, Route, Link} from "react-router-dom";
-import IMDBSearchItemComponent from "./components/IMDBSearchItemComponent";
+import MovieComponent from "./components/MovieComponent";
 import ReviewsComponent from './components/ReviewsComponent'
 
 ReactDOM.render(
@@ -14,7 +14,7 @@ ReactDOM.render(
         <div>
             <Link to={"/search/movies"}>Search Movies</Link>
             <Route path={'/search/movies'} exact component={IMDBSearchListComponent}/>
-            <Route path={'/search/movies/:movieId'} exact component={IMDBSearchItemComponent}/>
+            <Route path={'/search/movies/:movieId'} exact component={MovieComponent}/>
             <Route path={'/search/movies/:movieId/reviews'} exact component={ReviewsComponent}/>
         </div>
     </BrowserRouter>,

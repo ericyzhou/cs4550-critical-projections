@@ -1,6 +1,5 @@
 import React from 'react'
 import imdbSearchService from '../services/IMDBSearchService'
-import IMDBSearchItemComponent from "./IMDBSearchItemComponent";
 import {Link} from "react-router-dom";
 
 class IMDBSearchListComponent extends React.Component {
@@ -18,7 +17,7 @@ class IMDBSearchListComponent extends React.Component {
     }
 
     searchMovie = (movieTitle) => {
-        imdbSearchService.findMovieByTitle(movieTitle)
+        imdbSearchService.findMoviesByTitle(movieTitle)
             .then(results => this.setState(prevState => ({
                 ...this.state,
                 results
@@ -35,7 +34,7 @@ class IMDBSearchListComponent extends React.Component {
     render() {
         return(
             <div className={"container"}>
-                <h1>OMDB API Search</h1>
+                <h1>Search</h1>
                 <input className={"form-control"}
                        placeholder={"Movie name"}
                        onChange={(event) => this.updateSearchTerm(event.target.value)}/>
