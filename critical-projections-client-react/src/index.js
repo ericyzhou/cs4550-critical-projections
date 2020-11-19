@@ -15,8 +15,8 @@ ReactDOM.render(
         <div>
             <Link to={'/search/movies'}>Search Movies</Link>
             <br/>
-            <Link to={'/home'}>Home</Link>
-            <Route path={'/home'} exact component={HomePageContainer}/>
+            <Link to={'/'}>Home</Link>
+            <Route path={'/'} exact component={HomePageContainer}/>
             <Route path={'/search/movies'} exact component={IMDBSearchListComponent}/>
             <Route path={'/search/movies/:movieId'} exact component={MovieComponent}/>
             <Route path={'/search/movies/:movieId/reviews'} exact component={ReviewsComponent}/>
